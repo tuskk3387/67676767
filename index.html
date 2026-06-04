@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67</title>
+
+    <style>
+        img{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button{
+            position: fixed;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .spinning{
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin{
+            from{
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to{
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img id="gif67" src="bosnov-67.gif" alt="67">
+
+    <button onclick="playSong()">67</button>
+
+    <audio id="myAudio" src="eyyyyyyy-six-seven.mp3" loop></audio>
+
+    <script>
+        const track = document.getElementById("myAudio");
+        const img = document.getElementById("gif67");
+
+        function playSong() {
+            track.play();
+            img.classList.add("spinning");
+        }
+    </script>
+
+</body>
+</html>
