@@ -6,6 +6,11 @@
     <title>67</title>
 
     <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+
         img{
             position: fixed;
             top: 50%;
@@ -15,21 +20,32 @@
 
         button{
             position: fixed;
-            top: 55%;
+            top: 70%;
             left: 50%;
             transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
         }
 
-        .spinning{
-            animation: spin 5s linear infinite;
+        .spin-scale{
+            animation: spin-scale 1.165s linear infinite;
         }
 
-        @keyframes spin{
-            from{
-                transform: translate(-50%, -50%) rotate(0deg);
+        @keyframes spin-scale{
+            0%{
+                transform: translate(-50%, -50%) rotate(0deg) scale(0.5);
             }
-            to{
-                transform: translate(-50%, -50%) rotate(360deg);
+
+            50%{
+                transform: translate(-50%, -50%) rotate(15deg) scale(1);
+            }
+            51%{
+                transform: translate(-50%, -50%) rotate(0deg) scale(0.5);
+            }
+
+            100%{
+                transform: translate(-50%, -50%) rotate(-15deg) scale(1);
             }
         }
     </style>
@@ -48,10 +64,13 @@
 
         function playSong() {
             track.play();
-            img.classList.add("spinning");
+
+            if (!img.classList.contains("spin-scale")) {
+                img.classList.add("spin-scale");
+                img.src = "scp-067-67.gif"
+            }
         }
     </script>
-    <iframe width="110" height="200" src="https://www.myinstants.com/instant/67-kid-phonk-64429/embed/" frameborder="0" scrolling="no"></iframe>
 
 </body>
 </html>
